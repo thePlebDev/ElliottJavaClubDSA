@@ -6,12 +6,14 @@ public class FixedCapacityArrayList<E> implements CustomList<E>{
     private E[] data;
     private int size = 0;
 
-    public FixedCapacityArrayList(){
-        this(this.CAPACITY);
-    }
-    public FixedCapacityArrayList(int capacity){
-        data = (E[]) new Object[capacity];
-    }
+//    public FixedCapacityArrayList(){
+//        this(this.CAPACITY);
+//
+//    }
+//    public FixedCapacityArrayList(int capacity){
+//        super();
+//        data = (E[]) new Object[capacity];
+//    }
 
     @Override
     public int size() {
