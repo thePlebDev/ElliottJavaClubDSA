@@ -1,6 +1,8 @@
 package com.elliottJavaClub.app.lists;
 
 public interface Position <E>{
+    E getElement();
 
-    E getElement()throws IllegalStateException;
+
 }
+

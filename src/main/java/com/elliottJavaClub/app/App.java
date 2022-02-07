@@ -1,6 +1,12 @@
 package com.elliottJavaClub.app;
 
-import com.elliottJavaClub.app.algorithms.Algorithms;
+
+import com.elliottJavaClub.app.lists.Position;
+import com.elliottJavaClub.app.trees.BasicBinaryTree;
+
+
+
+
 
 /**
  * Hello world!
@@ -10,19 +16,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        Algorithms algorithms = new Algorithms();
-        int [] original= {1,2,3,4};
+        BasicBinaryTree<Integer> tree = new BasicBinaryTree<>();
+        Position<Integer> rootNode = tree.addRoot(30);
+        Position<Integer> leftNode1 = tree.addLeft(rootNode,9);
 
-        System.out.println(arrayToString(Algorithms.reverseArray(original,0,original.length-1)));
-
+        System.out.println(tree.size());
 
     }
 
-    public static String arrayToString(int[] arrays){
-        String convertedArray = "";
-        for(int i = 0; i <  arrays.length; i ++){
-            convertedArray += arrays[i];
-        }
-        return convertedArray;
-    }
+
 }
