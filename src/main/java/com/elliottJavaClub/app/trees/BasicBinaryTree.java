@@ -2,6 +2,11 @@ package com.elliottJavaClub.app.trees;
 
 import com.elliottJavaClub.app.lists.Position;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**TODO: TURN INTO A AVL TREE AND ADD A BALANCE FACTOR**/
 public class BasicBinaryTree<E> {
 
     private static class Node<E> implements Position<E>{
@@ -145,25 +150,36 @@ public class BasicBinaryTree<E> {
     }
 
 
+    public void preOrder(){
+        preTraverse(this.root);
 
+    }
+    private void preTraverse(Node<E> node){
+        if(node == null){
+            return;
+        }
+        preTraverse(node.getLeft());
+        preTraverse(node.getRight());
+        System.out.println(node.getElement());
+    }
+    public void BFS(){
+        breadthFirstSearch(this.root);
+    }
+    private void breadthFirstSearch(Node<E> root){
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.add(root);
+        while(queue.size() > 0){
+            Node<E> current = queue.remove();
+            System.out.println(current.getElement());
+            if(current.getLeft() != null){
+                queue.add(current.getLeft());
+            }
+            if(current.getRight() != null){
+                queue.add(current.getRight());
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     }
